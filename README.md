@@ -1,4 +1,4 @@
-# ips-et-feed — feed ET para el IPS Megatron
+# ips-et-feed â€” feed ET para el IPS Megatron
 
 Repositorio *serverless* que compila el feed de IPs comprometidas de
 [Emerging Threats](https://rules.emergingthreats.net/blockrules/compromised-ips.txt)
@@ -45,14 +45,14 @@ depender de ningun PC encendido.
 ## Instalacion en el router (una vez)
 
 1. Importar la CA de Let's Encrypt (sin ella `fetch` no valida HTTPS). El PEM
-   está versionado en `routeros/certs/isrg-root-x1.pem`:
+   estÃ¡ versionado en `routeros/certs/isrg-root-x1.pem`:
 
    ```routeros
    /certificate import file-name=isrg-root-x1.pem passphrase=""
    ```
 
 2. Crear el script de pull con el contenido de `routeros/ips-et-pull.src`
-   (sustituyendo `USUARIO` por tu usuario de GitHub):
+   (`etUrl` ya apunta a `alvaro40c-cloud/ips-et-feed`):
 
    ```routeros
    /system script add name="ips-et-megatron" policy=ftp,read,write,policy,test \

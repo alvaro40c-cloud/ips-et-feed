@@ -4,7 +4,7 @@
 # Flujo: descarga -> valida tamano -> importa -> verifica -> libera la lista vieja.
 # Si algo falla, la lista anterior sigue activa (fail-closed).
 
-:local etUrl "https://raw.githubusercontent.com/USUARIO/ips-et-feed/main/et-megatron.rsc"
+:local etUrl "https://raw.githubusercontent.com/alvaro40c-cloud/ips-et-feed/main/et-megatron.rsc"
 :local etFile "et-megatron.rsc"
 :local minSize 5000
 :local minEntries 100
