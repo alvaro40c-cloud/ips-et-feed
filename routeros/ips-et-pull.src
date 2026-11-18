@@ -1,0 +1,54 @@
+# IPS-MEGATRON et: pull diario del feed ET - realizado por megatron
+#
+# Se ejecuta desde el scheduler "ips-et-megatron" una vez al dia.
+# Flujo: descarga -> valida tamano -> importa -> verifica -> libera la lista vieja.
+# Si algo falla, la lista anterior sigue activa (fail-closed).
+
+:local etUrl "https://raw.githubusercontent.com/USUARIO/ips-et-feed/main/et-megatron.rsc"
+:local etFile "et-megatron.rsc"
+:local minSize 5000
+:local minEntries 100
+:local listA "ips_megatron_et_a"
+:local listB "ips_megatron_et_b"
+
+:global ipsEtCount
+:global ipsEtGenerated
+
+# lista en espera: la que este vacia (misma regla que usa el .rsc)
+:local standby $listA
+:local active $listB
+:if ([:len [/ip firewall address-list find where list=$listA]] > 0) do={
+  :set standby $listB
+  :set active $listA
+}
+:local prev [:len [/ip firewall address-list find where list=$active]]
+:local step "descarga"
+:local touched false
+
+:do {
+  /tool fetch url=$etUrl dst-path=$etFile check-certificate=yes
+  :local size [/file get $etFile size]
+  :if ($size < $minSize) do={ :error ("descarga incompleta: " . $size . " bytes") }
+
+  :set step "importacion"
+  :set touched true
+  /import file-name=$etFile
+
+  :set step "verificacion"
+  :if ([:typeof $ipsEtCount] != "num") do={ :error "el .rsc no definio ipsEtCount" }
+  :local n [:len [/ip firewall address-list find where list=$standby]]
+  :if ($n != $ipsEtCount) do={ :error ("esperaba " . $ipsEtCount . " entradas y hay " . $n) }
+  :if ($n < $minEntries) do={ :error ("solo " . $n . " entradas") }
+  :if (($prev > 0) and ($n < ($prev / 2))) do={ :error ("el feed cayo de " . $prev . " a " . $n) }
+
+  /ip firewall address-list remove [find where list=$active]
+  :log info ("IPS-MEGATRON et: " . $n . " redes en " . $standby . " (feed " . $ipsEtGenerated . ") - realizado por megatron")
+} on-error={
+  # la lista en espera no es la activa: se descarta para no bloquear a medias
+  :if ($touched) do={
+    :do { /ip firewall address-list remove [find where list=$standby] } on-error={}
+  }
+  :log error ("IPS-MEGATRON et: fallo en " . $step . ", se conserva la lista anterior - realizado por megatron")
+}
+
+:do { /file remove [find name=$etFile] } on-error={}
