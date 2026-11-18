@@ -44,7 +44,8 @@ depender de ningun PC encendido.
 
 ## Instalacion en el router (una vez)
 
-1. Importar la CA de Let's Encrypt (sin ella `fetch` no valida HTTPS):
+1. Importar la CA de Let's Encrypt (sin ella `fetch` no valida HTTPS). El PEM
+   está versionado en `routeros/certs/isrg-root-x1.pem`:
 
    ```routeros
    /certificate import file-name=isrg-root-x1.pem passphrase=""
