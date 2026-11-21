@@ -1,17 +1,18 @@
 # IPS-MEGATRON ET compromised - realizado por megatron
 # fuente: https://rules.emergingthreats.net/blockrules/compromised-ips.txt
-# generado: 2026-11-20T04:10:45Z
-# entradas: 584
+# generado: 2026-11-21T04:08:04Z
+# entradas: 590
 # destino: ips_megatron_et_a o ips_megatron_et_b (se elige la lista vacia al importar)
 :global ipsEtTarget "ips_megatron_et_a"
 :if ([:len [/ip firewall address-list find where list="ips_megatron_et_a"]] > 0) do={ :set ipsEtTarget "ips_megatron_et_b" }
 /ip firewall address-list remove [find where list=$ipsEtTarget]
 /ip firewall address-list add list=$ipsEtTarget address=3.101.143.168/32
-/ip firewall address-list add list=$ipsEtTarget address=5.2.69.86/32
 /ip firewall address-list add list=$ipsEtTarget address=5.101.116.122/32
 /ip firewall address-list add list=$ipsEtTarget address=5.189.137.53/32
 /ip firewall address-list add list=$ipsEtTarget address=5.189.161.50/32
 /ip firewall address-list add list=$ipsEtTarget address=5.189.163.143/32
+/ip firewall address-list add list=$ipsEtTarget address=13.56.251.44/32
+/ip firewall address-list add list=$ipsEtTarget address=13.57.6.23/32
 /ip firewall address-list add list=$ipsEtTarget address=13.140.81.162/32
 /ip firewall address-list add list=$ipsEtTarget address=14.34.249.175/32
 /ip firewall address-list add list=$ipsEtTarget address=14.51.12.142/32
@@ -20,12 +21,14 @@
 /ip firewall address-list add list=$ipsEtTarget address=14.195.186.230/32
 /ip firewall address-list add list=$ipsEtTarget address=14.225.165.177/32
 /ip firewall address-list add list=$ipsEtTarget address=15.235.193.26/32
+/ip firewall address-list add list=$ipsEtTarget address=18.145.248.29/32
 /ip firewall address-list add list=$ipsEtTarget address=20.74.143.67/32
 /ip firewall address-list add list=$ipsEtTarget address=23.132.164.148/32
 /ip firewall address-list add list=$ipsEtTarget address=23.132.164.164/32
 /ip firewall address-list add list=$ipsEtTarget address=23.132.164.245/32
 /ip firewall address-list add list=$ipsEtTarget address=23.132.164.246/32
 /ip firewall address-list add list=$ipsEtTarget address=23.251.133.108/32
+/ip firewall address-list add list=$ipsEtTarget address=24.207.128.114/32
 /ip firewall address-list add list=$ipsEtTarget address=27.0.135.6/32
 /ip firewall address-list add list=$ipsEtTarget address=27.0.135.12/32
 /ip firewall address-list add list=$ipsEtTarget address=27.50.20.36/32
@@ -33,7 +36,6 @@
 /ip firewall address-list add list=$ipsEtTarget address=27.79.0.150/32
 /ip firewall address-list add list=$ipsEtTarget address=27.79.2.7/32
 /ip firewall address-list add list=$ipsEtTarget address=27.79.2.178/32
-/ip firewall address-list add list=$ipsEtTarget address=27.79.4.180/32
 /ip firewall address-list add list=$ipsEtTarget address=27.79.5.133/32
 /ip firewall address-list add list=$ipsEtTarget address=27.79.5.137/32
 /ip firewall address-list add list=$ipsEtTarget address=27.79.5.144/32
@@ -56,11 +58,11 @@
 /ip firewall address-list add list=$ipsEtTarget address=31.59.155.193/32
 /ip firewall address-list add list=$ipsEtTarget address=31.208.252.157/32
 /ip firewall address-list add list=$ipsEtTarget address=31.220.77.194/32
+/ip firewall address-list add list=$ipsEtTarget address=32.184.13.221/32
 /ip firewall address-list add list=$ipsEtTarget address=34.1.253.65/32
 /ip firewall address-list add list=$ipsEtTarget address=34.22.144.98/32
 /ip firewall address-list add list=$ipsEtTarget address=34.22.199.197/32
 /ip firewall address-list add list=$ipsEtTarget address=34.22.211.175/32
-/ip firewall address-list add list=$ipsEtTarget address=34.22.220.217/32
 /ip firewall address-list add list=$ipsEtTarget address=34.22.229.71/32
 /ip firewall address-list add list=$ipsEtTarget address=34.38.1.130/32
 /ip firewall address-list add list=$ipsEtTarget address=34.38.98.3/32
@@ -79,7 +81,6 @@
 /ip firewall address-list add list=$ipsEtTarget address=34.78.26.141/32
 /ip firewall address-list add list=$ipsEtTarget address=34.78.118.97/32
 /ip firewall address-list add list=$ipsEtTarget address=34.79.12.66/32
-/ip firewall address-list add list=$ipsEtTarget address=34.79.89.168/32
 /ip firewall address-list add list=$ipsEtTarget address=34.140.17.70/32
 /ip firewall address-list add list=$ipsEtTarget address=34.140.19.217/32
 /ip firewall address-list add list=$ipsEtTarget address=34.140.64.102/32
@@ -88,6 +89,7 @@
 /ip firewall address-list add list=$ipsEtTarget address=34.156.238.42/32
 /ip firewall address-list add list=$ipsEtTarget address=35.87.173.189/32
 /ip firewall address-list add list=$ipsEtTarget address=35.88.9.149/32
+/ip firewall address-list add list=$ipsEtTarget address=35.95.79.2/32
 /ip firewall address-list add list=$ipsEtTarget address=35.187.8.59/32
 /ip firewall address-list add list=$ipsEtTarget address=35.187.25.156/32
 /ip firewall address-list add list=$ipsEtTarget address=35.187.63.236/32
@@ -186,6 +188,8 @@
 /ip firewall address-list add list=$ipsEtTarget address=35.210.240.68/32
 /ip firewall address-list add list=$ipsEtTarget address=35.210.242.117/32
 /ip firewall address-list add list=$ipsEtTarget address=35.214.134.43/32
+/ip firewall address-list add list=$ipsEtTarget address=35.214.160.88/32
+/ip firewall address-list add list=$ipsEtTarget address=35.214.177.15/32
 /ip firewall address-list add list=$ipsEtTarget address=35.214.199.138/32
 /ip firewall address-list add list=$ipsEtTarget address=35.214.204.44/32
 /ip firewall address-list add list=$ipsEtTarget address=35.214.243.124/32
@@ -194,16 +198,15 @@
 /ip firewall address-list add list=$ipsEtTarget address=35.233.109.223/32
 /ip firewall address-list add list=$ipsEtTarget address=35.233.117.1/32
 /ip firewall address-list add list=$ipsEtTarget address=35.233.126.229/32
-/ip firewall address-list add list=$ipsEtTarget address=35.241.210.215/32
 /ip firewall address-list add list=$ipsEtTarget address=36.139.216.235/32
 /ip firewall address-list add list=$ipsEtTarget address=36.151.150.108/32
+/ip firewall address-list add list=$ipsEtTarget address=36.255.97.54/32
 /ip firewall address-list add list=$ipsEtTarget address=37.119.238.184/32
 /ip firewall address-list add list=$ipsEtTarget address=37.119.239.229/32
 /ip firewall address-list add list=$ipsEtTarget address=41.33.45.100/32
 /ip firewall address-list add list=$ipsEtTarget address=41.75.123.75/32
 /ip firewall address-list add list=$ipsEtTarget address=41.93.28.11/32
 /ip firewall address-list add list=$ipsEtTarget address=41.111.172.25/32
-/ip firewall address-list add list=$ipsEtTarget address=43.153.114.203/32
 /ip firewall address-list add list=$ipsEtTarget address=43.156.20.191/32
 /ip firewall address-list add list=$ipsEtTarget address=43.157.226.233/32
 /ip firewall address-list add list=$ipsEtTarget address=43.172.81.176/32
@@ -211,6 +214,7 @@
 /ip firewall address-list add list=$ipsEtTarget address=43.228.157.207/32
 /ip firewall address-list add list=$ipsEtTarget address=43.228.157.231/32
 /ip firewall address-list add list=$ipsEtTarget address=43.228.157.232/32
+/ip firewall address-list add list=$ipsEtTarget address=44.243.133.4/32
 /ip firewall address-list add list=$ipsEtTarget address=44.248.196.163/32
 /ip firewall address-list add list=$ipsEtTarget address=44.251.247.18/32
 /ip firewall address-list add list=$ipsEtTarget address=45.14.225.216/32
@@ -218,6 +222,7 @@
 /ip firewall address-list add list=$ipsEtTarget address=45.115.26.38/31
 /ip firewall address-list add list=$ipsEtTarget address=45.119.85.159/32
 /ip firewall address-list add list=$ipsEtTarget address=45.141.22.63/32
+/ip firewall address-list add list=$ipsEtTarget address=45.148.10.61/32
 /ip firewall address-list add list=$ipsEtTarget address=45.148.10.141/32
 /ip firewall address-list add list=$ipsEtTarget address=45.148.10.151/32
 /ip firewall address-list add list=$ipsEtTarget address=45.148.10.152/32
@@ -246,6 +251,8 @@
 /ip firewall address-list add list=$ipsEtTarget address=54.67.97.93/32
 /ip firewall address-list add list=$ipsEtTarget address=54.153.108.32/32
 /ip firewall address-list add list=$ipsEtTarget address=54.183.201.88/32
+/ip firewall address-list add list=$ipsEtTarget address=54.215.92.134/32
+/ip firewall address-list add list=$ipsEtTarget address=54.215.254.166/32
 /ip firewall address-list add list=$ipsEtTarget address=58.242.117.176/32
 /ip firewall address-list add list=$ipsEtTarget address=62.60.130.148/32
 /ip firewall address-list add list=$ipsEtTarget address=62.84.182.79/32
@@ -253,12 +260,14 @@
 /ip firewall address-list add list=$ipsEtTarget address=63.250.36.183/32
 /ip firewall address-list add list=$ipsEtTarget address=64.89.160.221/32
 /ip firewall address-list add list=$ipsEtTarget address=64.89.163.175/32
+/ip firewall address-list add list=$ipsEtTarget address=64.225.38.156/32
 /ip firewall address-list add list=$ipsEtTarget address=64.225.120.184/32
 /ip firewall address-list add list=$ipsEtTarget address=64.227.101.30/32
 /ip firewall address-list add list=$ipsEtTarget address=66.206.39.42/32
 /ip firewall address-list add list=$ipsEtTarget address=71.6.146.130/32
 /ip firewall address-list add list=$ipsEtTarget address=72.42.194.230/32
 /ip firewall address-list add list=$ipsEtTarget address=74.209.100.246/32
+/ip firewall address-list add list=$ipsEtTarget address=74.225.156.91/32
 /ip firewall address-list add list=$ipsEtTarget address=75.156.145.235/32
 /ip firewall address-list add list=$ipsEtTarget address=77.90.185.128/32
 /ip firewall address-list add list=$ipsEtTarget address=77.91.71.23/32
@@ -356,7 +365,6 @@
 /ip firewall address-list add list=$ipsEtTarget address=116.99.170.139/32
 /ip firewall address-list add list=$ipsEtTarget address=116.99.172.160/32
 /ip firewall address-list add list=$ipsEtTarget address=116.99.173.142/32
-/ip firewall address-list add list=$ipsEtTarget address=116.99.174.150/32
 /ip firewall address-list add list=$ipsEtTarget address=116.99.174.201/32
 /ip firewall address-list add list=$ipsEtTarget address=116.99.175.51/32
 /ip firewall address-list add list=$ipsEtTarget address=116.99.175.236/32
@@ -377,6 +385,7 @@
 /ip firewall address-list add list=$ipsEtTarget address=117.2.125.84/32
 /ip firewall address-list add list=$ipsEtTarget address=117.36.231.242/32
 /ip firewall address-list add list=$ipsEtTarget address=117.247.81.45/32
+/ip firewall address-list add list=$ipsEtTarget address=118.27.10.208/32
 /ip firewall address-list add list=$ipsEtTarget address=118.36.222.243/32
 /ip firewall address-list add list=$ipsEtTarget address=118.70.50.33/32
 /ip firewall address-list add list=$ipsEtTarget address=118.91.233.56/32
@@ -402,6 +411,7 @@
 /ip firewall address-list add list=$ipsEtTarget address=121.242.232.216/32
 /ip firewall address-list add list=$ipsEtTarget address=123.25.1.226/32
 /ip firewall address-list add list=$ipsEtTarget address=123.30.238.247/32
+/ip firewall address-list add list=$ipsEtTarget address=123.139.38.70/32
 /ip firewall address-list add list=$ipsEtTarget address=124.123.19.5/32
 /ip firewall address-list add list=$ipsEtTarget address=124.156.139.21/32
 /ip firewall address-list add list=$ipsEtTarget address=124.156.202.105/32
@@ -425,6 +435,7 @@
 /ip firewall address-list add list=$ipsEtTarget address=138.226.239.233/32
 /ip firewall address-list add list=$ipsEtTarget address=138.226.239.234/32
 /ip firewall address-list add list=$ipsEtTarget address=142.93.60.116/32
+/ip firewall address-list add list=$ipsEtTarget address=143.110.136.221/32
 /ip firewall address-list add list=$ipsEtTarget address=144.91.73.69/32
 /ip firewall address-list add list=$ipsEtTarget address=144.91.105.93/32
 /ip firewall address-list add list=$ipsEtTarget address=147.135.200.242/32
@@ -442,6 +453,7 @@
 /ip firewall address-list add list=$ipsEtTarget address=158.69.197.98/32
 /ip firewall address-list add list=$ipsEtTarget address=158.173.89.136/32
 /ip firewall address-list add list=$ipsEtTarget address=158.220.103.127/32
+/ip firewall address-list add list=$ipsEtTarget address=159.65.109.248/32
 /ip firewall address-list add list=$ipsEtTarget address=159.65.135.106/32
 /ip firewall address-list add list=$ipsEtTarget address=160.120.191.213/32
 /ip firewall address-list add list=$ipsEtTarget address=160.251.231.65/32
@@ -460,10 +472,7 @@
 /ip firewall address-list add list=$ipsEtTarget address=164.68.126.168/32
 /ip firewall address-list add list=$ipsEtTarget address=165.22.148.135/32
 /ip firewall address-list add list=$ipsEtTarget address=165.154.11.64/32
-/ip firewall address-list add list=$ipsEtTarget address=165.227.16.50/32
 /ip firewall address-list add list=$ipsEtTarget address=165.227.16.226/32
-/ip firewall address-list add list=$ipsEtTarget address=165.227.28.164/32
-/ip firewall address-list add list=$ipsEtTarget address=165.227.56.128/32
 /ip firewall address-list add list=$ipsEtTarget address=167.71.138.9/32
 /ip firewall address-list add list=$ipsEtTarget address=167.86.76.199/32
 /ip firewall address-list add list=$ipsEtTarget address=167.86.80.153/32
@@ -480,6 +489,7 @@
 /ip firewall address-list add list=$ipsEtTarget address=169.58.249.20/32
 /ip firewall address-list add list=$ipsEtTarget address=169.239.75.138/32
 /ip firewall address-list add list=$ipsEtTarget address=171.231.176.78/32
+/ip firewall address-list add list=$ipsEtTarget address=171.231.177.114/32
 /ip firewall address-list add list=$ipsEtTarget address=171.231.179.46/32
 /ip firewall address-list add list=$ipsEtTarget address=171.231.182.40/32
 /ip firewall address-list add list=$ipsEtTarget address=171.231.183.106/32
@@ -498,7 +508,6 @@
 /ip firewall address-list add list=$ipsEtTarget address=175.210.10.97/32
 /ip firewall address-list add list=$ipsEtTarget address=176.65.139.131/32
 /ip firewall address-list add list=$ipsEtTarget address=176.102.49.129/32
-/ip firewall address-list add list=$ipsEtTarget address=176.103.15.188/32
 /ip firewall address-list add list=$ipsEtTarget address=178.67.248.12/32
 /ip firewall address-list add list=$ipsEtTarget address=178.83.99.8/32
 /ip firewall address-list add list=$ipsEtTarget address=179.43.153.2/32
@@ -557,16 +566,13 @@
 /ip firewall address-list add list=$ipsEtTarget address=204.3.231.15/32
 /ip firewall address-list add list=$ipsEtTarget address=206.81.23.5/32
 /ip firewall address-list add list=$ipsEtTarget address=206.189.169.145/32
-/ip firewall address-list add list=$ipsEtTarget address=207.175.20.206/32
 /ip firewall address-list add list=$ipsEtTarget address=207.175.36.218/32
-/ip firewall address-list add list=$ipsEtTarget address=207.175.64.233/32
 /ip firewall address-list add list=$ipsEtTarget address=207.175.66.99/32
 /ip firewall address-list add list=$ipsEtTarget address=207.175.77.252/32
 /ip firewall address-list add list=$ipsEtTarget address=207.175.109.36/32
 /ip firewall address-list add list=$ipsEtTarget address=207.175.136.167/32
 /ip firewall address-list add list=$ipsEtTarget address=207.175.157.156/32
 /ip firewall address-list add list=$ipsEtTarget address=207.180.194.109/32
-/ip firewall address-list add list=$ipsEtTarget address=207.241.172.146/32
 /ip firewall address-list add list=$ipsEtTarget address=209.38.121.225/32
 /ip firewall address-list add list=$ipsEtTarget address=209.99.190.186/32
 /ip firewall address-list add list=$ipsEtTarget address=209.99.190.215/32
@@ -593,6 +599,6 @@
 
 # realizado por megatron
 # se escriben al final: si la importacion se corta, el router lo detecta
-:global ipsEtGenerated "2026-11-20T04:10:45Z"
+:global ipsEtGenerated "2026-11-21T04:08:04Z"
 :global ipsEtSource "https://rules.emergingthreats.net/blockrules/compromised-ips.txt"
-:global ipsEtCount 584
+:global ipsEtCount 590
