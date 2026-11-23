@@ -1,6 +1,6 @@
 # IPS-MEGATRON ET compromised - realizado por megatron
 # fuente: https://rules.emergingthreats.net/blockrules/compromised-ips.txt
-# generado: 2026-11-22T04:10:21Z
+# generado: 2026-11-23T04:26:34Z
 # entradas: 590
 # destino: ips_megatron_et_a o ips_megatron_et_b (se elige la lista vacia al importar)
 :global ipsEtTarget "ips_megatron_et_a"
@@ -599,6 +599,6 @@
 
 # realizado por megatron
 # se escriben al final: si la importacion se corta, el router lo detecta
-:global ipsEtGenerated "2026-11-22T04:10:21Z"
+:global ipsEtGenerated "2026-11-23T04:26:34Z"
 :global ipsEtSource "https://rules.emergingthreats.net/blockrules/compromised-ips.txt"
 :global ipsEtCount 590
