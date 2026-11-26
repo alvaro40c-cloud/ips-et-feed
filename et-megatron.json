@@ -1,9 +1,9 @@
 {
-  "generated": "2026-11-25T04:25:50Z",
+  "generated": "2026-11-26T04:22:07Z",
   "source": "https://rules.emergingthreats.net/blockrules/compromised-ips.txt",
-  "count": 574,
-  "feed_bytes": 8146,
-  "feed_sha256": "1f008797dc3a79aafbc66cb6fe27ea1274d980c6050f1b15c2f4ff06b2931104",
-  "rsc_sha256": "a6fd94400604f108ae8ac5d60c7c920edff93f52dd52b0b9f092e83b522b7158",
+  "count": 567,
+  "feed_bytes": 8051,
+  "feed_sha256": "348cc19bf5c42f99cd2fd9d53d220f65a1ece734f9b8f77bee43f28e22e54c63",
+  "rsc_sha256": "f436fa4121b542e023aaceaf0d522dfc78852397b4d43b717902f383278a6c2b",
   "tag": "realizado por megatron"
 }
